@@ -47,8 +47,10 @@ function LoginPage() {
 
         <button type="submit">Giriş yap</button>
       </form>
-      <div className="linkler" style={{ marginTop: "1rem" }}>
-        <Link to="/forgot-password">Şifremi unuttum</Link> |{" "}
+      
+      {/* MOBİL HATA ÇÖZÜMÜ: Linkler arası ayraç kaldırıldı, özel class verildi */}
+      <div className="alt-linkler">
+        <Link to="/forgot-password">Şifremi unuttum</Link>
         <Link to="/register">Hesabın yok mu? Kayıt ol</Link>
       </div>
     </div>

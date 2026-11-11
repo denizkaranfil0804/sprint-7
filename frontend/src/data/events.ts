@@ -10,7 +10,8 @@ export const events: CampusEvent[] = [
     time: "14:00",
     location: "A Blok Konferans Salonu",
     description: "Mezunlarla kariyer söyleşileri ve şirket standları.",
-    image: "/afis.svg"
+    // HATA DÜZELTİLDİ: Patlamayan, doğrudan yüklenen geçici bir görsel linki eklendi
+    image: "https://images.unsplash.com/photo-1540575467063-178a50c2df87?auto=format&fit=crop&w=800&q=80" 
   },
   {
     id: "event-2",

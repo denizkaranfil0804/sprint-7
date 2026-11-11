@@ -25,3 +25,9 @@ Bash
 npm run dev
 
 4. API test istekleri backend/requests/kampus-api.json dosyası altında yer almaktadır. Postman'a "Import" ederek tüm testleri gerçekleştirebilirsiniz.
+
+Method        Endpoint      Açıklama                             Başarı Kodu        Hata Kodu
+GET,/health    /  Sistem sağlık kontrolü ve öğrenci numarası döner  /  200 OK /  -
+GET,/events        /  Bellekteki tüm etkinlikleri listeler  /   200 OK  /  -
+GET,/events/:id    /    ID'ye göre tek bir etkinliğin detayını getirir /   200 OK / 404 Not Found
+POST,/events      /    Sisteme yeni bir etkinlik ekler  /   201 Created / 400 Bad Request

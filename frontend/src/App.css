@@ -1,0 +1,318 @@
+:root {
+  --renk-ana: #2e8b57;
+  --renk-ana-hover: #246b43;
+  --renk-koyu: #1f2937;
+  --renk-acik: #f4f6f8;
+  --renk-beyaz: #ffffff;
+  --renk-hata: #d9534f;
+  --renk-basari: #155724;
+  --renk-basari-bg: #d4edda;
+  --kose-yaricap: 8px;
+  --golge: 0 4px 6px rgba(0, 0, 0, 0.08);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  background-color: var(--renk-acik);
+  color: var(--renk-koyu);
+  line-height: 1.6;
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+main {
+  max-width: 1000px;
+  width: 100%;
+  margin: 2rem auto;
+  padding: 0 1rem;
+  flex: 1;
+}
+
+/* Header ve Menüyü İçeren Uçtan Uca Tam Yeşil Alan */
+.ust-alan {
+  background-color: var(--renk-ana);
+  width: 100%;
+  padding-top: 1.5rem;
+}
+
+header.site-baslik {
+  color: var(--renk-beyaz);
+  width: 100%;
+  padding: 0 2rem 1rem 2rem;
+  text-align: left;
+}
+
+header.site-baslik h1 {
+  font-size: 2.2rem;
+  margin-bottom: 0.3rem;
+  font-weight: 600;
+}
+
+header.site-baslik p {
+  font-size: 1.05rem;
+  opacity: 0.9;
+}
+
+/* Navigation / Menü (Uçtan uca yeşil zemin üzerinde sola dayalı) */
+nav.menu {
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  gap: 0.5rem;
+  padding: 0.5rem 2rem 1rem 2rem;
+  flex-wrap: wrap;
+}
+
+nav.menu a,
+nav.menu button {
+  color: #ffffff !important;
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  font-weight: 500;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: all 0.2s ease;
+}
+
+nav.menu a:hover,
+nav.menu button:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+  color: #ffffff !important;
+}
+
+nav.menu a.active,
+nav.menu button[aria-current="page"] {
+  background-color: #ffffff !important;
+  color: var(--renk-ana) !important;
+  font-weight: bold;
+}
+
+/* Footer */
+footer {
+  background-color: var(--renk-koyu);
+  color: var(--renk-beyaz);
+  text-align: center;
+  padding: 1.5rem 1rem;
+  margin-top: 3rem;
+}
+
+/* Butonlar */
+.buton,
+button[type="submit"] {
+  display: inline-block;
+  background-color: var(--renk-ana);
+  color: var(--renk-beyaz);
+  padding: 0.6rem 1.2rem;
+  border-radius: var(--kose-yaricap);
+  text-decoration: none;
+  border: none;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  margin-top: 0.5rem;
+}
+
+.buton:hover,
+button[type="submit"]:hover {
+  background-color: var(--renk-ana-hover);
+}
+
+.buton-sil {
+  background-color: var(--renk-hata) !important;
+}
+
+.buton-sil:hover {
+  background-color: #c9302c !important;
+}
+
+/* Etkinlik Kartları */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+.kart {
+  background: var(--renk-beyaz);
+  border-radius: var(--kose-yaricap);
+  padding: 1.5rem;
+  box-shadow: var(--golge);
+  border: 1px solid #e0e0e0;
+  border-top: 4px solid var(--renk-ana);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.kart h2 {
+  font-size: 1.3rem;
+  margin-bottom: 0.5rem;
+  color: var(--renk-koyu);
+}
+
+.kart .kategori {
+  display: inline-block;
+  background: #e8f5e9;
+  color: var(--renk-ana);
+  padding: 0.2rem 0.6rem;
+  border-radius: 4px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  margin-bottom: 0.8rem;
+  width: fit-content;
+}
+
+.kart p {
+  margin-bottom: 0.5rem;
+  font-size: 0.95rem;
+}
+
+/* Filtreler */
+.filtreler {
+  display: flex;
+  gap: 1rem;
+  margin: 1.5rem 0;
+  flex-wrap: wrap;
+  background: #fff;
+  padding: 1.5rem;
+  border: 1px solid #e0e0e0;
+  border-radius: var(--kose-yaricap);
+}
+
+.filtreler input,
+.filtreler select {
+  padding: 0.6rem 1rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1rem;
+  flex: 1;
+  min-width: 200px;
+}
+
+/* Formlar */
+.form,
+.auth-form {
+  background: var(--renk-beyaz);
+  padding: 2rem;
+  border-radius: var(--kose-yaricap);
+  box-shadow: var(--golge);
+  max-width: 600px;
+  margin: 1.5rem auto;
+  border: 1px solid #e0e0e0;
+}
+
+.form label,
+.auth-form label {
+  display: block;
+  margin-top: 1rem;
+  margin-bottom: 0.3rem;
+  font-weight: 600;
+}
+
+.form input,
+.form select,
+.form textarea,
+.auth-form input {
+  width: 100%;
+  padding: 0.65rem 0.8rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1rem;
+  font-family: inherit;
+}
+
+.hata-metni {
+  color: var(--renk-hata);
+  font-size: 0.85rem;
+  margin-top: 0.25rem;
+  display: block;
+}
+
+input[aria-invalid="true"],
+select[aria-invalid="true"],
+textarea[aria-invalid="true"] {
+  border-color: var(--renk-hata);
+  background-color: #fff8f8;
+}
+
+.mesaj-basari {
+  background-color: var(--renk-basari-bg);
+  color: var(--renk-basari);
+  padding: 0.8rem;
+  border-radius: 4px;
+  margin-bottom: 1rem;
+  font-weight: 500;
+}
+
+/* Tablo */
+.tablo {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1.5rem;
+  background: var(--renk-beyaz);
+  border-radius: var(--kose-yaricap);
+  overflow: hidden;
+  border: 1px solid #e0e0e0;
+}
+
+.tablo th,
+.tablo td {
+  padding: 0.85rem 1rem;
+  text-align: left;
+  border-bottom: 1px solid #eee;
+}
+
+.tablo th {
+  background-color: var(--renk-ana);
+  color: var(--renk-beyaz);
+  font-weight: 600;
+}
+
+.islemler {
+  display: flex;
+  gap: 0.5rem;
+}
+
+@media (max-width: 699px) {
+  .tablo thead {
+    display: none;
+  }
+  .tablo tr {
+    display: block;
+    border: 1px solid #ccc;
+    border-radius: var(--kose-yaricap);
+    margin-bottom: 1rem;
+    padding: 0.8rem;
+    background: var(--renk-beyaz);
+  }
+  .tablo td {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #f0f0f0;
+    padding: 0.5rem 0;
+  }
+  .tablo td:last-child {
+    border-bottom: none;
+  }
+  .tablo td[data-baslik]::before {
+    content: attr(data-baslik) ": ";
+    font-weight: bold;
+    color: var(--renk-koyu);
+  }
+}
